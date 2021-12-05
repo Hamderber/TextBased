@@ -16,6 +16,7 @@ dist
 
 # Package files
 *.jar
+.vsconfig
 
 # Maven
 target
@@ -51,7 +52,6 @@ Thumbs.db
 
 # Visual Studio cache directory
 .vs
-.vsconfig
 
 # Gradle cache directory
 .gradle
