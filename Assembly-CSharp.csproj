@@ -61,8 +61,8 @@
     <Compile Include="Assets\Scripts\SystemDataManager.cs" />
     <Compile Include="Assets\Scripts\UniversalGameConditions.cs" />
     <Compile Include="Assets\Scripts\GraphicsMenu.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\GraphicsManager.cs" />
+    <Compile Include="Assets\Scripts\GameScriptManager.cs" />
+    <Compile Include="Assets\Scripts\GraphicsScriptManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

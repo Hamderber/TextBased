@@ -8,19 +8,25 @@ public class GraphicsMenu : MonoBehaviour
 {
     private SystemData _systemData;
 
+    public GameObject FullscreenToggle;
+    public GameObject ResolutionDropdown;
+    public GameObject QualityDropdown;
+
     Resolution[] resolutions;
     public TMP_Dropdown resolutionDropdown;
 
-    void Awake()
-    {
-        UpdateResolutionOptions();
-        
-    }
-
-    private void Start()
+    private void Awake()
     {
         //Gets the singleton system data
+        SystemDataManager.Instance.LoadSystemData();
         _systemData = SystemDataManager.Instance.Data;
+        
+        UpdateResolutionOptions();
+
+        SystemDataManager.Instance.LoadSystemData();
+        FullscreenToggle.GetComponent<Toggle>().isOn = _systemData.IsFullscreen;
+        QualityDropdown.GetComponent<TMP_Dropdown>().value = _systemData.QualityIndex;
+        //Debug.Log(_systemData);
     }
 
 
@@ -30,37 +36,39 @@ public class GraphicsMenu : MonoBehaviour
     /// </summary>
     public void UpdateResolutionOptions()
     {
+        Debug.Log("Updating resolution options");
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
 
         List<string> resolutionOptions = new List<string>();
 
         //List<string> resolutionOptions = new List<string>();
-        int currentResolutionIndex = 0;
+        //_systemData.GameResolutionIndex = 0;
         Debug.Log($"Current screen dimensions are {Screen.width}x{Screen.height}.");
         for (int i = 0; i < resolutions.Length; i++)
         {
             string option = resolutions[i].width + "x" + resolutions[i].height;
-            Debug.Log($"Added resolution {option} to the list of resolution options.");
-            //resolutionOptions.Add(option);
+            //Debug.Log($"Added resolution {option} to the list of resolution options.");
             resolutionOptions.Add(option);
 
-            if (resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
+            /*if (resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
             {
-                currentResolutionIndex = i;
+                _systemData.GameResolutionIndex = i;
                 Debug.Log($"Set the default resolution to {option}.");
-            }
+            }*/
 
         }
-        _systemData.ResolutionOptions = resolutionOptions;
+        //_systemData.ResolutionOptions = resolutionOptions;
         //resolutionDropdown.AddOptions(resolutionOptions);
         resolutionDropdown.AddOptions(_systemData.ResolutionOptions);
-        if (currentResolutionIndex == 0)
+        if (_systemData.GameResolutionIndex == 0)
         {
             Debug.Log($"Current resolution of {Screen.width}x{Screen.height} isn't compatible with the generated options. Setting default resolution to {resolutions[0].width}x{resolutions[0].height}.");
         }
-        resolutionDropdown.value = currentResolutionIndex;
-        _systemData.GameResolutionIndex = currentResolutionIndex;
+        resolutionDropdown.value = _systemData.GameResolutionIndex;
+        //_systemData.GameResolutionIndex = _systemData.GameResolutionIndex;
+
+        ResolutionDropdown.GetComponent<TMP_Dropdown>().value = _systemData.GameResolutionIndex;
         resolutionDropdown.RefreshShownValue();
     }    
 }

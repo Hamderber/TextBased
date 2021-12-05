@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class GraphicsManager : MonoBehaviour
+public class GraphicsScriptManager : MonoBehaviour
 {
     private SystemData _systemData;
 
@@ -13,9 +13,11 @@ public class GraphicsManager : MonoBehaviour
     {
         //Gets the singleton system data
         SystemDataManager.Instance.LoadSystemData();
+        SystemDataManager.Instance.SaveSystemData();
         _systemData = SystemDataManager.Instance.Data;
         DetermineResolutionOptions();
         SetQuality(_systemData.QualityIndex);
+        SetResolution(_systemData.GameResolutionIndex);
     }
 
 
@@ -32,10 +34,11 @@ public class GraphicsManager : MonoBehaviour
         //List<string> resolutionOptions = new List<string>();
         int currentResolutionIndex = 0;
         Debug.Log($"Current screen dimensions are {Screen.width}x{Screen.height}.");
+        Debug.Log("Determining available resolutions.");
         for (int i = 0; i < resolutions.Length; i++)
         {
             string option = resolutions[i].width + "x" + resolutions[i].height;
-            Debug.Log($"Added resolution {option} to the list of resolution options.");
+            //Debug.Log($"Added resolution {option} to the list of resolution options.");
             //resolutionOptions.Add(option);
             resolutionOptions.Add(option);
 
@@ -47,7 +50,7 @@ public class GraphicsManager : MonoBehaviour
 
         }
 
-        Debug.Log(_systemData.ResolutionOptions);
+        //Debug.Log(_systemData.ResolutionOptions);
         _systemData.ResolutionOptions = resolutionOptions;
 
         //resolutionDropdown.AddOptions(resolutionOptions);
@@ -55,12 +58,14 @@ public class GraphicsManager : MonoBehaviour
         {
             Debug.Log($"Current resolution of {Screen.width}x{Screen.height} isn't compatible with the generated options. Setting default resolution to {resolutions[0].width}x{resolutions[0].height}.");
         }
+        SystemDataManager.Instance.SaveSystemData();
     }
     public void SetQuality(int qualityIndex)
     {
         Debug.Log($"Set game quality to {qualityIndex}.");
         _systemData.QualityIndex = qualityIndex;
         QualitySettings.SetQualityLevel(qualityIndex);
+        SystemDataManager.Instance.SaveSystemData();
     }
 
     public void ToggleFullscreen(bool isFullcreen)
@@ -68,6 +73,7 @@ public class GraphicsManager : MonoBehaviour
         Debug.Log($"Set fullscreen to {isFullcreen}");
         _systemData.IsFullscreen = isFullcreen;
         Screen.fullScreen = isFullcreen;
+        SystemDataManager.Instance.SaveSystemData();
     }
 
     public void SetResolution(int resolutionIndex)
@@ -76,5 +82,6 @@ public class GraphicsManager : MonoBehaviour
         Debug.Log($"Set screen resolution to {resolution.width}x{resolution.height} with Fullscreen = {_systemData.IsFullscreen}.");
         _systemData.GameResolutionIndex = resolutionIndex;
         Screen.SetResolution(resolution.width, resolution.height, _systemData.IsFullscreen);
+        SystemDataManager.Instance.SaveSystemData();
     }
 }

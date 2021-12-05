@@ -15,9 +15,9 @@ public class SystemData
         MusicVolume = 0.0f;
         GameplayVolume = 0.0f;
         MasterVolume = 0.0f;
-        GameResolutionIndex = 0;
+        GameResolutionIndex = 1;
         IsFullscreen = false;
-        if(ResolutionOptions.Count !> 0)
+        if(ResolutionOptions.Count <= 0)
         {
             ResolutionOptions.Add("320x200");
         }

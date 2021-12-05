@@ -912,8 +912,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1868648306}
-        m_TargetAssemblyTypeName: GraphicsMenu, Assembly-CSharp
+      - m_Target: {fileID: 858027823}
+        m_TargetAssemblyTypeName: GraphicsScriptManager, Assembly-CSharp
         m_MethodName: SetQuality
         m_Mode: 0
         m_Arguments:
@@ -1617,7 +1617,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 858027825}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: UpdateSettings
         m_Mode: 1
@@ -3338,8 +3338,8 @@ GameObject:
   m_Component:
   - component: {fileID: 858027822}
   - component: {fileID: 858027821}
-  - component: {fileID: 858027825}
   - component: {fileID: 858027823}
+  - component: {fileID: 858027824}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3389,7 +3389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a33c6bce29af0364a99eea54ec655b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &858027825
+--- !u!114 &858027824
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4551,8 +4551,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 858027825}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 858027824}
+        m_TargetAssemblyTypeName: GameScriptManager, Assembly-CSharp
         m_MethodName: UpdateSettings
         m_Mode: 1
         m_Arguments:
@@ -4708,7 +4708,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 858027825}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: UpdateSettings
         m_Mode: 1
@@ -4843,8 +4843,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1868648306}
-        m_TargetAssemblyTypeName: GraphicsMenu, Assembly-CSharp
+      - m_Target: {fileID: 858027823}
+        m_TargetAssemblyTypeName: GraphicsScriptManager, Assembly-CSharp
         m_MethodName: ToggleFullscreen
         m_Mode: 0
         m_Arguments:
@@ -6660,8 +6660,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1868648306}
-        m_TargetAssemblyTypeName: GraphicsMenu, Assembly-CSharp
+      - m_Target: {fileID: 858027823}
+        m_TargetAssemblyTypeName: GraphicsScriptManager, Assembly-CSharp
         m_MethodName: SetResolution
         m_Mode: 0
         m_Arguments:
@@ -7575,6 +7575,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c13371b03e73bf4fb65d8e577e1495e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FullscreenToggle: {fileID: 1237268172}
+  ResolutionDropdown: {fileID: 1683646370}
+  QualityDropdown: {fileID: 250420183}
   resolutionDropdown: {fileID: 1683646372}
 --- !u!1 &1890862598
 GameObject:
@@ -8229,7 +8232,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 858027825}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: UpdateSettings
         m_Mode: 1

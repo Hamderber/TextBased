@@ -55,6 +55,10 @@ public class SystemDataManager
     /// </summary>
     public void LoadSystemData()
     {
+        if (Data != null)
+        {
+            return;
+        }
         if (!File.Exists(_applicationDataPathSettings))
         {
             Data = new SystemData();
