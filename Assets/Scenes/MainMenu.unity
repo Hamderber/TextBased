@@ -1617,8 +1617,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 858027824}
+        m_TargetAssemblyTypeName: GameScriptManager, Assembly-CSharp
         m_MethodName: UpdateSettings
         m_Mode: 1
         m_Arguments:
@@ -3182,8 +3182,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1551014775}
-        m_TargetAssemblyTypeName: AudioMenu, Assembly-CSharp
+      - m_Target: {fileID: 858027825}
+        m_TargetAssemblyTypeName: AudioScriptManager, Assembly-CSharp
         m_MethodName: SetMasterVolume
         m_Mode: 0
         m_Arguments:
@@ -3340,6 +3340,7 @@ GameObject:
   - component: {fileID: 858027821}
   - component: {fileID: 858027823}
   - component: {fileID: 858027824}
+  - component: {fileID: 858027825}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3401,6 +3402,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68ec40be1b0de9140adc238538f2189f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &858027825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858027820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7267a746eb47d9b46bb5ef2a75865746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterAudioMixer: {fileID: 24100000, guid: 762bd939d49395843963e3c7dead86df, type: 2}
 --- !u!1 &868622300
 GameObject:
   m_ObjectHideFlags: 0
@@ -5365,8 +5379,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1551014775}
-        m_TargetAssemblyTypeName: AudioMenu, Assembly-CSharp
+      - m_Target: {fileID: 858027825}
+        m_TargetAssemblyTypeName: AudioScriptManager, Assembly-CSharp
         m_MethodName: SetMusicVolume
         m_Mode: 0
         m_Arguments:
@@ -5913,7 +5927,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce8cd15736d4c864db7f3768f39ae2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  masterAudioMixer: {fileID: 24100000, guid: 762bd939d49395843963e3c7dead86df, type: 2}
+  MasterVolumeSlider: {fileID: 706263619}
+  GameplayVolumeSlider: {fileID: 2070026694}
+  MusicVolumeSlider: {fileID: 1350714900}
 --- !u!1 &1552818147
 GameObject:
   m_ObjectHideFlags: 0
@@ -8232,18 +8248,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: UpdateSettings
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!114 &2064897137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8373,8 +8377,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1551014775}
-        m_TargetAssemblyTypeName: AudioMenu, Assembly-CSharp
+      - m_Target: {fileID: 858027825}
+        m_TargetAssemblyTypeName: AudioScriptManager, Assembly-CSharp
         m_MethodName: SetGameplayVolume
         m_Mode: 0
         m_Arguments:

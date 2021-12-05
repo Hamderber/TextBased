@@ -2,34 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class AudioMenu : MonoBehaviour
 {
     private SystemData _systemData;
-    public AudioMixer masterAudioMixer;
+    public GameObject MasterVolumeSlider;
+    public GameObject GameplayVolumeSlider;
+    public GameObject MusicVolumeSlider;
 
-    private void Start()
+    private void Awake()
     {
         //Gets the singleton system data
+        SystemDataManager.Instance.LoadSystemData("Audio Menu refreshing");
         _systemData = SystemDataManager.Instance.Data;
+        UpdateGameplayVolumeSlider();
+        UpdateMasterVolumeSlider();
+        UpdateMusicVolumeSlider();
     }
-    public void SetMasterVolume (float masterVolumeSlider)
+    public void UpdateMasterVolumeSlider()
     {
-        masterAudioMixer.SetFloat("MasterVolumeParameter", masterVolumeSlider);
-        _systemData.MasterVolume = masterVolumeSlider;
-        Debug.Log($"Master volume changed to {masterVolumeSlider}.");
+        MasterVolumeSlider.GetComponent<Slider>().value = _systemData.MasterVolume;
     }
 
-    public void SetMusicVolume(float musicVolumeSlider)
+    public void UpdateMusicVolumeSlider()
     {
-        masterAudioMixer.SetFloat("MasterVolumeParameter", musicVolumeSlider);
-        _systemData.MusicVolume = musicVolumeSlider;
-        Debug.Log($"Music volume changed to {musicVolumeSlider}.");
+        MusicVolumeSlider.GetComponent<Slider>().value = _systemData.MusicVolume;
     }
-    public void SetGameplayVolume(float gameplayVolumeSlider)
+    public void UpdateGameplayVolumeSlider()
     {
-        masterAudioMixer.SetFloat("MasterVolumeParameter", gameplayVolumeSlider);
-        _systemData.GameplayVolume = gameplayVolumeSlider;
-        Debug.Log($"Gameplay volume changed to {gameplayVolumeSlider}.");
+        GameplayVolumeSlider.GetComponent<Slider>().value = _systemData.GameplayVolume;
     }
 }

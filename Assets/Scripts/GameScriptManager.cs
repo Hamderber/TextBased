@@ -7,12 +7,11 @@ public class GameScriptManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SystemDataManager.Instance.LoadSystemData();
-        SystemDataManager.Instance.SaveSystemData();
+        SystemDataManager.Instance.LoadSystemData("Game Script Manager initialization");
     }
 
     public void UpdateSettings()
     {
-        SystemDataManager.Instance.SaveSystemData();
+        SystemDataManager.Instance.SaveSystemData("saving menu changes");
     }
 }
