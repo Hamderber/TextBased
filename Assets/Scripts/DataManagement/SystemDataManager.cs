@@ -5,10 +5,7 @@ using UnityEngine;
 public class SystemDataManager
 {
     private string _applicationDataPath { get; set; }
-
     private string _applicationDataPathSettings { get; set; }
-    private string _applicationDataPathGameSaves { get; set; }
-
     private string _applicationDataRoot { get; set; }
 
     private static SystemDataManager _instance;
@@ -31,22 +28,12 @@ public class SystemDataManager
         _applicationDataRoot = Application.dataPath;
         _applicationDataPath = Path.Combine(_applicationDataRoot, "Settings");
         _applicationDataPathSettings = Path.Combine(_applicationDataPath, "Settings.json");
-        _applicationDataPathGameSaves = Path.Combine(_applicationDataRoot, "Saves");
-        //hard code for one save for right now
-        // in future maybe make list of saves in settings file in future reffering to save quantity
-
         if (!Directory.Exists(_applicationDataPath))
         {
             Directory.CreateDirectory(_applicationDataPath);
             Debug.Log($"Directory {_applicationDataPath} did not exist, created that directory.");
         }
         Debug.Log($"Application data path is {_applicationDataPath}.");
-
-        if (!Directory.Exists(_applicationDataPathGameSaves))
-        {
-            Directory.CreateDirectory(_applicationDataPathGameSaves);
-            Debug.Log($"Directory {_applicationDataPathGameSaves} did not exist, created that directory.");
-        }
 
     }
 

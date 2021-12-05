@@ -53,17 +53,21 @@
     <UnityVersion>2020.3.23f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\MainMenu.cs" />
-    <Compile Include="Assets\Scripts\AudioMenu.cs" />
-    <Compile Include="Assets\Scripts\SystemData.cs" />
-    <Compile Include="Assets\Scripts\ResolutionManager.cs" />
+    <Compile Include="Assets\Scripts\SystemSettings\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\SystemSettings\AudioMenu.cs" />
+    <Compile Include="Assets\Scripts\DataManagement\SystemData.cs" />
+    <Compile Include="Assets\Scripts\SystemSettings\ResolutionManager.cs" />
     <Compile Include="Assets\Scripts\SceneLoading.cs" />
-    <Compile Include="Assets\Scripts\SystemDataManager.cs" />
+    <Compile Include="Assets\Scripts\DataManagement\SystemDataManager.cs" />
     <Compile Include="Assets\Scripts\UniversalGameConditions.cs" />
-    <Compile Include="Assets\Scripts\GraphicsMenu.cs" />
+    <Compile Include="Assets\Scripts\SystemSettings\GraphicsMenu.cs" />
     <Compile Include="Assets\Scripts\GameScriptManager.cs" />
-    <Compile Include="Assets\Scripts\GraphicsScriptManager.cs" />
-    <Compile Include="Assets\Scripts\AudioScriptManager.cs" />
+    <Compile Include="Assets\Scripts\SystemSettings\GraphicsScriptManager.cs" />
+    <Compile Include="Assets\Scripts\SystemSettings\AudioScriptManager.cs" />
+    <Compile Include="Assets\Scripts\CharacterCreation.cs" />
+    <Compile Include="Assets\Scripts\DataManagement\PlayerData.cs" />
+    <Compile Include="Assets\Scripts\DataManagement\PlayerDataManager.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
