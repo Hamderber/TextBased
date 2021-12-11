@@ -10,6 +10,7 @@ public class PlayerData
     public int PlayerExperience { get; private set; }
     public string PlayerName { get; private set; }
     public bool PlayerGenderMale { get; private set; }
+    public bool PlayerGenderFemale { get; private set; }
     public float PlayerArmor { get; private set; }
     public float PlayerEffectResistance { get; private set; }
     public float PlayerLuck { get; private set; }
@@ -23,14 +24,34 @@ public class PlayerData
         PlayerExperience = 0;
         PlayerName = "Steve";
         PlayerGenderMale = true;
+        PlayerGenderFemale = false;
     }
-
     /// <summary>
-    /// true = male, false = female. There are only two genders as there should be #cancel_kevin
+    /// 0=M,1=F,2=M/F,3=none
     /// </summary>
-    public void SetPlayerGender(bool gender)
+    /// <param name="genderIndex"></param>
+    public void SetPlayerGender(int genderIndex)
     {
-        PlayerGenderMale = gender;
+        if (genderIndex == 0)
+        {
+            PlayerGenderMale = true;
+            PlayerGenderFemale = false;
+        }
+        else if (genderIndex == 1)
+        {
+            PlayerGenderMale = false;
+            PlayerGenderFemale = true;
+        }
+        else if (genderIndex == 2)
+        {
+            PlayerGenderMale = true;
+            PlayerGenderFemale = true;
+        }
+        else
+        {
+            PlayerGenderMale = false;
+            PlayerGenderFemale = false;
+        }
     }
 
     public void SetPlayerName(string name)

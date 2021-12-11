@@ -10,31 +10,22 @@ public class SceneLoading : MonoBehaviour
     public GameObject go_AudioMenu;
     public GameObject go_GraphicsMenu;
 
-    public void LoadScene(int sceneName)
+    public void LoadSceneInt(int sceneName)
     {
         Debug.Log($"Loading scene {sceneName}.");
         SceneManager.LoadScene(sceneName);
         
     }
 
-    public void Test()
+    public void LoadSceneString(string titleScreenScene)
     {
-        Debug.Log("Test");
+        Debug.Log($"Loading scene {titleScreenScene}.");
+        SceneManager.LoadScene(titleScreenScene);
     }
 
-    public void Start()
+    public void QuitGame()
     {
-        /*GameObject[] gameObjectMenus = new GameObject[] { StartMainMenu, go_OptionsMenu, go_AudioMenu, go_GraphicsMenu };
-        foreach (var menu in gameObjectMenus)
-        {
-            //temporarily loads all menus so they can set default values
-            Debug.Log($"Set {menu.name} to active.");
-            menu.SetActive(true);
-            menu.SetActive(false);
-            Debug.Log($"Set {menu.name} to inactive.");
-        }
-        Debug.Log($"Set {StartMainMenu} to active.");
-        gameObjectMenus[0].SetActive(true);*/
-
+        Debug.Log("Application quitting.");
+        Application.Quit();
     }
 }
