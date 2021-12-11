@@ -16,8 +16,8 @@ public class GameplayScriptManager : MonoBehaviour
     {
         if (saveIndex == 0) _systemData.AutoSaveFrequency = 30f;
         if (saveIndex == 1) _systemData.AutoSaveFrequency = 60f;
-        if (saveIndex == 1) _systemData.AutoSaveFrequency = 300f;
-        if (saveIndex == 1) _systemData.AutoSaveFrequency = 900f;
-        if (saveIndex == 1) _systemData.AutoSaveFrequency = 1800f;
+        if (saveIndex == 2) _systemData.AutoSaveFrequency = 300f;
+        if (saveIndex == 3) _systemData.AutoSaveFrequency = 900f;
+        if (saveIndex == 4) _systemData.AutoSaveFrequency = 1800f;
     }
 }
