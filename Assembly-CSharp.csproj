@@ -73,6 +73,10 @@
     <Compile Include="Assets\Scripts\Entities\EntityBase.cs" />
     <Compile Include="Assets\Scripts\Entities\IEntity.cs" />
     <Compile Include="Assets\Scripts\SystemSettings\GameplayScriptManager.cs" />
+    <Compile Include="Assets\Scripts\GameOutput\DescriptionBox.cs" />
+    <Compile Include="Assets\Scripts\GameOutput\Room.cs" />
+    <Compile Include="Assets\Scripts\GameOutput\RoomGenerator.cs" />
+    <Compile Include="Assets\Scripts\GameOutput\DungeonHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
