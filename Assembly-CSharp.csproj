@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\EnemyBase.cs" />
     <Compile Include="Assets\Scripts\Entities\EntityBase.cs" />
     <Compile Include="Assets\Scripts\Entities\IEntity.cs" />
+    <Compile Include="Assets\Scripts\SystemSettings\GameplayScriptManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

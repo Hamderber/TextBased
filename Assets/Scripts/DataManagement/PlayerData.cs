@@ -61,4 +61,14 @@ public class PlayerData
     {
         PlayerName = name;
     }
+    public void SetPlayerData(float health, float maxHealth, float armor, float magicRestistance, float speed, int experience, float luck)
+    {
+        PlayerHealth = health;
+        PlayerMaxHealth = maxHealth;
+        PlayerArmor = armor;
+        PlayerMagicRestistance = magicRestistance;
+        PlayerSpeed = speed;
+        PlayerExperience = experience;
+        PlayerLuck = luck;
+    }
 }

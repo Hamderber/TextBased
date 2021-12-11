@@ -9,6 +9,7 @@ public class SystemData
     public bool IsFullscreen { get; set; }
     public List<string> ResolutionOptions = new List<string>();
     public int QualityIndex { get; set; }
+    public float AutoSaveFrequency { get; set; }
 
     public SystemData()
     {
@@ -17,6 +18,7 @@ public class SystemData
         MasterVolume = 0.0f;
         GameResolutionIndex = 1;
         IsFullscreen = false;
+        AutoSaveFrequency = 30f;
         if(ResolutionOptions.Count <= 0)
         {
             ResolutionOptions.Add("320x200");
