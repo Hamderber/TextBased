@@ -11,8 +11,8 @@ public class PlayerData
     public string PlayerName { get; private set; }
     public bool PlayerGenderMale { get; private set; }
     public bool PlayerGenderFemale { get; private set; }
-    public float PlayerArmor { get; private set; }
-    public float PlayerEffectResistance { get; private set; }
+    public float PlayerArmor { get; private set; }//calculation calls this physical resistance not armor
+    public float PlayerMagicRestistance { get; private set; }
     public float PlayerLuck { get; private set; }
     public List<GameObject> PlayerInventory = new List<GameObject>();
 
@@ -20,6 +20,9 @@ public class PlayerData
     {
         PlayerHealth = 10f;
         PlayerMaxHealth = 10f;
+        PlayerArmor = 0f;
+        PlayerMagicRestistance = 0f;
+        PlayerLuck = 1f;
         PlayerSpeed = 1f;
         PlayerExperience = 0;
         PlayerName = "Steve";

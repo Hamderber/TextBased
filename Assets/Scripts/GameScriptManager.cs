@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameScriptManager : MonoBehaviour
 {
+    public bool IsGamePaused { get; private set; }
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,10 @@ public class GameScriptManager : MonoBehaviour
     public void UpdateSettings()
     {
         SystemDataManager.Instance.SaveSystemData("saving menu changes");
+    }
+
+    public void ToggleGamePaused()
+    {
+        IsGamePaused = !IsGamePaused;
     }
 }

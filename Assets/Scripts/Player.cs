@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : EntityBase
 {
     private PlayerData _playerData;
     private void Start()
     {
         PlayerDataManager.Instance.LoadPlayerData("Player initialization");
         _playerData = PlayerDataManager.Instance.Data;
+        Health = _playerData.PlayerHealth;
+        MaxHealth = _playerData.PlayerMaxHealth;
+        PhysicalResistance = _playerData.PlayerArmor;
+        MagicRestistance = _playerData.PlayerMagicRestistance;
+        Speed = _playerData.PlayerSpeed;
     }
 
     public void ReloadPlayerData(string source)
